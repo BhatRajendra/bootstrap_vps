@@ -86,12 +86,12 @@ autoload -Uz vcs_info
 precmd() { vcs_info }
 
 # Git branch format (red)
-zstyle ':vcs_info:git:*' formats ' %F{red}(%b)%f'
+zstyle ':vcs_info:git:*' formats 'on %F{red}(%b)%f'
 
 # Allow prompt substitution
 setopt prompt_subst
 
 PROMPT='
-%F{244}%n@%m%f in %F{cyan}%1~%f on${vcs_info_msg_0_}
+%F{244}%n@%m%f in %F{cyan}%1~%f ${vcs_info_msg_0_}
 %F{green}->%f '
 

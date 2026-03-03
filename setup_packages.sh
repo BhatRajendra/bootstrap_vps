@@ -6,6 +6,7 @@ sudo apt update
 
 echo "===== Installing packages ====="
 
+bash install/essential.sh
 bash install/nvim.sh
 bash install/fd.sh
 bash install/fzf.sh

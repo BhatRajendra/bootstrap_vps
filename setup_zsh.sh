@@ -21,16 +21,23 @@ else
     echo "Zsh already default shell."
 fi
 
-# 3️⃣ Copy .zshrc from configs
+# 3️⃣ Symlink .zshrc from repo
 if [[ -f "configs/.zshrc" ]]; then
-    echo "Copying .zshrc..."
-    
-    if [[ -f "$HOME/.zshrc" ]]; then
+    echo "Linking .zshrc..."
+
+    # Backup existing file if it's NOT already a symlink
+    if [[ -f "$HOME/.zshrc" && ! -L "$HOME/.zshrc" ]]; then
         echo "Backing up existing .zshrc to .zshrc.bak"
         mv "$HOME/.zshrc" "$HOME/.zshrc.bak"
     fi
 
-    cp configs/.zshrc "$HOME/.zshrc"
+    # Remove old symlink if exists
+    rm -f "$HOME/.zshrc"
+
+    # Create symlink
+    ln -s "$(pwd)/configs/.zshrc" "$HOME/.zshrc"
+
+    echo "Symlink created."
 else
     echo "configs/.zshrc not found!"
 fi
