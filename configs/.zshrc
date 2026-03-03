@@ -92,6 +92,6 @@ zstyle ':vcs_info:git:*' formats ' %F{red}(%b)%f'
 setopt prompt_subst
 
 PROMPT='
-%n@%m in %F{cyan}%1~%f on${vcs_info_msg_0_}
+%F{244}%n@%m%f in %F{cyan}%1~%f on${vcs_info_msg_0_}
 %F{green}->%f '
 
