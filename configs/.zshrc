@@ -91,6 +91,7 @@ zstyle ':vcs_info:git:*' formats ' %F{red}(%b)%f'
 # Allow prompt substitution
 setopt prompt_subst
 
-# Blue folder name + red branch
-PROMPT='%F{yellow}%m%f %F{green}%1~%f${vcs_info_msg_0_} %# '
+PROMPT='
+%n@%m in %F{cyan}%1~%f on${vcs_info_msg_0_}
+%F{green}->%f '
 
