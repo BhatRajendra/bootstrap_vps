@@ -13,5 +13,6 @@ bash install/fzf.sh
 bash install/ripgrep.sh
 bash install/yazi.sh
 bash install/zellij.sh
+bash install/nginx.sh
 
 echo "===== All packages installed successfully ====="
